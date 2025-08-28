@@ -1,0 +1,19 @@
+
+int main()
+{
+    FILE* fptr = fopen(getenv("OUTPUT_PATH"), "w");
+
+    char** first_multiple_input = split_string(rtrim(readline()));
+
+    long long r = parse_int(*(first_multiple_input + 0));
+
+    long long c = parse_int(*(first_multiple_input + 1));
+
+    long long result = strangeGrid(r, c);
+
+    fprintf(fptr, "%lld\n", result);
+
+    fclose(fptr);
+
+    return 0;
+}
